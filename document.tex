@@ -1,0 +1,198 @@
+\documentclass[addpoints,answers]{exam}
+% \documentclass[addpoints]{exam}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{euscript}
+\usepackage{mathrsfs}
+\usepackage{soul}
+\usepackage{graphicx,subcaption}
+\usepackage[normalem]{ulem}
+\usepackage{ctex}
+\usepackage{tikz}
+\usepackage{eso-pic} 
+\usepackage{lipsum}
+\usepackage{transparent}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{geometry}
+\usepackage{cancel}
+\usepackage{enumitem}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{哈尔滨工业大学}{}{问天讲师团—离散数学模拟试题}
+\runningheader{哈尔滨工业大学}
+{}
+{问天讲师团—离散数学模拟试题}
+\runningheadrule
+\firstpagefooter{}{第\thepage\ 页（共\numpages 页）}{}
+\runningfooter{}{第 \thepage\ 页 （共\numpages 页）}{}
+
+% no box for solutions
+% \unframedsolutions
+
+\pointname{ 分}
+\pointformat{（\thepoints）}
+
+\totalformat{共\totalpoints 分}
+
+\setlength\linefillheight{.5in}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{答：}}
+% \renewcommand{\solutiontitle}{\noindent\textbf{解：}\par\noindent}
+
+\renewcommand{\thequestion}{\zhnum{question}}
+\renewcommand{\questionlabel}{\thequestion .}
+\renewcommand{\thepartno}{\arabic{partno}}
+\renewcommand{\partlabel}{\thepartno .}
+%\renewcommand{\thesubpart}{}
+%\renewcommand{\subpartlabel}{\thesubpart.}
+%\renewcommand{\thesubsubpart}{}
+%\renewcommand{\subsubpartlabel}{\thesubsubpart)}
+%\renewcommand{\thechoice}
+%\renewcommand{\choicelabel}{\thechoice.}
+%\arabic \alph \Alph \roman \Roman \greeknum
+% 正文 Times 风格
+
+\begin{document}
+	\AddToShipoutPictureFG{
+	\begin{textblock*}{2cm}(% 图片宽度：2cm（可按需调整）
+		\dimexpr\paperwidth - 3cm \relax,  % X坐标：页面宽度 - 图片宽度 - 右边距（1cm是图片到页边的距离）
+		1cm  % Y坐标：距离页面顶部1cm（可按需调整，避免与页眉重叠）
+		)
+		\includegraphics[width=2cm]{hit1.png}  % 插入图片（example-image是LaTeX自带示例图，直接用）
+	\end{textblock*}
+	}
+	\begin{center}
+		\Large \textbf{哈尔滨工业大学 2025-2026学年秋季学期} \\
+		 \textbf{问天讲师团——离散数学模拟试题} \\ % 可替换为具体科目（如“马克思主义理论”）
+		\vspace{1em} % 标题与题目间的垂直间距
+		\normalsize 考试时间：120 分钟 \quad 总分：100 分 \\
+	\end{center}
+	考试题型据说全是大题，因此选择了全大题的命题方式。并依照唯一的公开资料 2023离散数学（\(A\)）的大致分数分布进行了命题。本试题不是为了押题，只是为了过考点，并且督促大家复习，所以希望大家好好练习，谢谢喵\\有任何疑问请联系 QQ：2016307096，谢谢喵。
+	
+	
+	\begin{questions}
+		
+		\question[40] 解答题（共 6 题，每题 7 分）
+		
+	\begin{parts}
+		\part
+		\begin{enumerate}[label=\Roman*  ]
+			\item 设有一个集合 \(X=\{1,2,3,4\},Y=\{a,b,c\}\)，那么从 \(X\) 到 \(Y\) 上的不同的满射的个数是多少？
+			\item 一般地，如果集合 \(|X|=m,|Y|=n\)，那从 \(X\) 到 \(Y\) 上的不同的满射的个数是多少？
+			\item 利用映射的关系或者抽屉原理，证明 Erd$\ddot{o}$s-Szekeres 定理：在由 \( mn + 1 \) 个元素构成的序列中，必存在长度为 \( m + 1 \) 的递增子序列，或存在长度为 \( n + 1 \) 的递减子序列（不允许使用 Dilworth 定理直接导出结论）。
+		\end{enumerate}
+		
+		\vspace{16\baselineskip}
+		\part
+		\begin{enumerate}[label=\Roman*  ]
+			\item 如果 \(X=\{1,2,3,4\}\)，那通常小于等于号 \(\leq\) 这个二元关系的序对集合是什么？
+			\item 在集合 \(X={1,2,4,8,16}\) 中，在“整除”这一偏序关系下，元素 \(16\) 是这个集合的极大元素还是最大元素？或者两者都是？
+			\item 设 \( R \subseteq X \times X \)，证明： \[ R^+ = \bigcup_{n=1}^{+\infty} R^n. \]
+		\end{enumerate}
+		\vspace{10\baselineskip}
+		
+		
+		\part 
+		\begin{enumerate}[label=\Roman*  ]
+			\item 在 \(\{\uparrow,\downarrow,\neg,\land,\lor,\to\}\) 中选出几个联结词，构成最小联结词完备集，要求：
+			\begin{enumerate}
+				\item 写出只由一个联结词构成的最小联结词完备集（写全）；
+				\item 写出由两个联结词构成的最小联结词完备集（写出三个即可）。
+			\end{enumerate}
+			\item \(p\to q\) 的主析取范式；
+			\item \((P\land Q)\to(\neg Q\land R)\)的合取范式，并在合取范式的基础上求出主合取范式。
+		\end{enumerate}
+		\vspace{12\baselineskip}
+		\part 
+		\begin{enumerate}[label=\Roman*]
+			\item \( \sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5  \\ 5 & 2 & 1 & 4 & 3  \end{pmatrix} \)，写出 \(\sigma^{-1}\)；
+			\item \( \sigma = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ 4 & 3 & 5 & 2 & 1 & 7 & 6 & 8 \end{pmatrix} \)，把 \(\sigma \) 写成循环置换的形式，并且说明这是奇置换还是偶置换；
+			\item 证明：在 $n$ 次置换 \( S_n \) 中，奇置换的个数与偶置换的个数相等。
+		\end{enumerate}
+		\vspace{12\baselineskip}
+		
+		
+		
+		\part
+		\begin{enumerate}[label=\Roman*]
+			\item 给出一种求最小生成树的算法的基本思想；
+			\item 给定一个运输网络，\(s\) 是源点，\(t\) 是汇点，为这张网络求出一个最大流和一个最小割。
+			\begin{figure}[h]  % 位置参数控制图片优先放置的位置
+				\centering  % 图片居中对齐
+				\includegraphics[width=0.3\textwidth, keepaspectratio]{wangluoliu.jpg}  % 插入图片
+				  % 图片标题（会自动编号）
+				\label{fig:wll}  % 标签（用于交叉引用，如\ref{fig:标签名}）
+			\end{figure}
+		\end{enumerate}
+		\vspace{12\baselineskip}
+		
+		
+		\part 设 \(G\) 是一张简单连通图。
+		\begin{enumerate}[label=\Roman*]
+			\item 在 \(G\) 是 \(r\) 次图的情况下，如果 \(\kappa(G)=1\)，证明：\[\lambda(G)\leq [\frac{r}{2}];\]
+			\item 说明 Peterson 图不是 Hamilton 图。
+			\begin{figure}[h]  % 位置参数控制图片优先放置的位置
+				\centering  % 图片居中对齐
+				\includegraphics[width=0.2\textwidth, keepaspectratio]{peterson.png}  % 插入图片
+				% 图片标题（会自动编号）
+				\label{fig:pts}  % 标签（用于交叉引用，如\ref{fig:标签名}）
+			\end{figure}
+		\end{enumerate}
+		\vspace{7\baselineskip}
+	\end{parts}
+		
+		\question[40] 证明题 （共 8 题，前两道大题每题 7 分，其他题目每题 7 分）
+		\begin{parts}
+			\part 证明下列几个命题（第一问 2 分，后两问每一问 3 分）：
+			\begin{enumerate}[label=\Roman*  ]
+				\item 	证明：$\vdash_{PC} (A \to (B \to C)) \to (B \to (A \to C))$ ，只允许使用公理 \(A_1,A_2,A_3\) 以及分离规则 \(r_{MP}\)；
+				\item   证明：\( \vdash_{PC}((A\to B)\to C)\to ((C\to A)\to A) \)，允许使用课上讲过的常用定理和公理，但是不允许使用三段论和演绎定理；
+				\item   证明：\(\vdash_{FC}\forall x \neg \mathcal{A} \to \exists x \mathcal{B} \vdash \exists x (\neg \mathcal{A} \to \mathcal{B})\)，允许使用掌握的所有方法。
+			\end{enumerate}
+			\vspace{7\baselineskip}
+		
+			
+			\part 
+			\begin{enumerate}[label=\Roman*  ]
+				\item 画出一个可平面的 Hamilton 图，并写出可平面 Hamilton 图的 Grinberg 定理（只写一条即可，使用 \(f_i\) 和 \(g_i\) 分别表示 \(i\) 次的内面和外面）然后证明其中之一；
+				\item 证明 Ore 定理：设 \( G = (V, E) \) 是顶点数 \( p \geq 3 \) 的简单图，若对任意不相邻顶点 \( v,u \in V \)，有 \( deg (v) + deg (u) \geq p \)，则 \( G \) 是哈密顿图。
+			\end{enumerate} 
+			\vspace{14\baselineskip}
+				\part 设 \(G\) 是一张 \(p,q\) 图。（每小问 4 分）
+			\begin{enumerate}[label=\Roman*  ]
+				\item 如果 \(G\) 是一张极大平面图而且在 \(p\geq 4\) ，证明：\(\delta(G)\geq 3\)；
+				\item 在 \(p\geq 4\) 时，证明： \(G\) 中有 \(4\) 个度不超过 \(5\) 的顶点。
+			\end{enumerate}
+			\vspace{12\baselineskip}
+			\part 设 \(S=\{a,b,c\}\)，\(\circ\) 是 \(S\) 上的二元运算，且：\(a\circ a=b,b\circ b=c,c\circ c=a\)，证明：\((S,\circ) \) 不构成半群。
+			\vspace{13\baselineskip}
+			
+			\part  
+			\begin{enumerate}[label=\Roman*  ]
+				\item \( c = |[0,1]| = |\mathbb{R}| \)，利用 Cantor-Bernstein 定理证明：\(c^c = 2^c;\) 
+				\item 说明 Cantor 对角线法的基本思想，并且借此证明出区间 \([0,1]\) 中所有数的集合是不可数的。
+			\end{enumerate}
+			\vspace{15\baselineskip}
+			\part 设 \( (S, \circ) \) 为半群，\( A \subseteq S \) 且 \( A \neq \varnothing \)，证明：
+			\begin{enumerate}[label=\Roman*  ]
+				\item 由 \( A \) 生成的左理想为 \( A \cup S \circ A \)；
+				\item 由 \( A \) 生成的理想为 \( A \cup S \circ A \cup A \circ S \cup S \circ A \circ S \)。
+			\end{enumerate}
+			\vspace{20\baselineskip}
+			\part 设树中度数为 \( i \) 的顶点个数为 \( n_i \)，\( p \) 为树的阶，显然 \(\sum_{i=1}^k n_i = p\)。证明：
+			\[
+			n_1 = 2 + n_3 + 2n_4 + \dots + (k-2)n_k.
+			\]
+			\vspace{20\baselineskip}
+			\part 证明：\(H\leq G,a\in G,aH=H\iff a\in H\)。
+		\end{parts}
+		
+		
+	\end{questions}
+	
+\end{document}
